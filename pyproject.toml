@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "DiscSteward"
+version = "0.3.0"
+description = "DiscSteward: automate disc ripping, map playlists, and name TV files"
+requires-python = ">=3.10"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "UpsideDownDisk"}]
+keywords = ["blu-ray", "dvd", "makemkv", "plex", "subtitles"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Win32 (MS Windows)",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Multimedia :: Video",
+]
+
+[project.urls]
+Homepage = "https://github.com/UpsideDownDisk/DiscSteward"
+Repository = "https://github.com/UpsideDownDisk/DiscSteward"
+Issues = "https://github.com/UpsideDownDisk/DiscSteward/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "build>=1.2"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["bluray_map*"]
+namespaces = false
+
+[project.scripts]
+discsteward = "bluray_map.cli:main"
+bluray-map = "bluray_map.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

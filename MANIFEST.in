@@ -1,0 +1,14 @@
+include LICENSE README.md CLEAN-PC-SETUP.md CHANGELOG.md CONTRIBUTING.md THIRD_PARTY.md
+include PUBLISHING.md .gitignore .gitattributes
+include discsteward-ui.py
+include Open?DiscSteward.vbs
+include DiscSteward-Diagnostics.cmd
+recursive-include src/bluray_map *.py
+recursive-include tests *.py
+recursive-include assets *.png
+recursive-include scripts *.py
+recursive-include .github *.yml
+prune work
+prune .test-temp
+prune Disk
+global-exclude *.py[cod] __pycache__ *.mkv *.m2ts *.iso *.sup *.srt *.zip

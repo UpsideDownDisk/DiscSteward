@@ -16,13 +16,10 @@ TheDiscDb match or a strong local subtitle match. Otherwise, it shows an
 editable suggestion for you to check. It will not automatically rename an
 unverified episode.
 
-## About this project
-
-DiscSteward was created by a non-coder with help from AI. Constructive
-feedback, bug reports, and ideas for making it more reliable or easier to use
-are welcome.
-
 ## Get started on Windows
+
+This is the **0.3.0 source release**, not a standalone EXE. Download and extract
+the complete project folder before launching it; Python must be installed.
 
 1. Install Python 3.10 or newer, MakeMKV, and FFmpeg. See the
    [Windows setup guide](CLEAN-PC-SETUP.md) for where to get them and how to
@@ -44,9 +41,9 @@ not need to use the command line for normal operation.
 
 If the app will not open, double-click **DiscSteward-Diagnostics.cmd** in this
 folder. It keeps the error visible so you can report it. For setup and usage
-questions, check the [Windows setup guide](CLEAN-PC-SETUP.md); if this project
-is on GitHub, you can also use its **Issues** tab to ask for help or report a
-problem. Include the error message and whether the disc is a Blu-ray or DVD,
+questions, check the [Windows setup guide](CLEAN-PC-SETUP.md) or
+[open a GitHub issue](https://github.com/UpsideDownDisk/DiscSteward/issues).
+Include the error message and whether the disc is a Blu-ray or DVD,
 but do not upload copyrighted disc contents.
 
 The project is read-only with respect to disc data. The optional Plex action
@@ -144,9 +141,7 @@ use **Open saved mapping** to review that disc later. Automatic acceptance still
 renames safe matches without a confirmation dialog.
 Mapping reports include copyable proposed Plex names for verified identities.
 The `bluray-map` command and the `bluray_map` Python package remain compatible.
-Existing settings are loaded on first use of DiscSteward. Obsolete launchers
-and the one-off Nikita test report were removed from the main folder; recoverable
-copies are in `DiscSteward-obsolete-files-backup.zip`.
+Existing settings are loaded on first use of DiscSteward.
 
 **Manual match, rename and move** lets you review unmatched files or unverified
 identities without retyping everything. Choose **Programme 1**, **Programme 2**
@@ -244,9 +239,21 @@ DVD or replace an end-to-end test with a real disc and optical drive.
 
 ## Development checks
 
+The standard-library regression suite does not need extra Python packages:
+
 ```powershell
 $env:PYTHONPATH = 'src'
-py -3 -m pytest
 py -3 -m unittest discover -s tests -v
-py -3 -m compileall -q src discsteward-ui.py
+py -3 -m compileall -q src discsteward-ui.py scripts
 ```
+
+See [Contributing](CONTRIBUTING.md) for optional pytest and package-build checks,
+and [Publishing](PUBLISHING.md) for creating a clean source ZIP. GitHub Actions
+runs Windows checks on Python 3.10, 3.13 and 3.14 after upload.
+
+## Licence
+
+DiscSteward is available under the [MIT licence](LICENSE).
+External programs and data retain their own terms; see
+[Third-party software and data](THIRD_PARTY.md). No MakeMKV, FFmpeg, disc media
+or downloaded subtitles are bundled with this project.
