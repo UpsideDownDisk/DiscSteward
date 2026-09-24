@@ -16,6 +16,12 @@ TheDiscDb match or a strong local subtitle match. Otherwise, it shows an
 editable suggestion for you to check. It will not automatically rename an
 unverified episode.
 
+## About this project
+
+DiscSteward was created by a non-coder with help from AI. Constructive
+feedback, bug reports, and ideas for making it more reliable or easier to use
+are welcome.
+
 ## Get started on Windows
 
 1. Install Python 3.10 or newer, MakeMKV, and FFmpeg. See the
